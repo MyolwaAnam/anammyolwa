@@ -23,36 +23,38 @@ document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
         e.stopPropagation();
         const href = this.getAttribute('href');
         console.log('Mobile nav link clicked:', href);
-        const target = document.querySelector(href);
-        if (target) {
-            const offset = 64; // Fixed nav height offset (~nav height)
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-            // Delay menu closing to ensure scrolling completes
-            setTimeout(() => {
+        try {
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Delay menu closing to ensure scrolling completes
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenu.classList.remove('open');
+                    themeToggle.classList.remove('hidden');
+                    document.body.classList.remove('no-scroll');
+                }, 700); // Increased delay for slower devices
+            } else {
+                console.error('Target section not found:', href);
+                // Fallback: Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
                 mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('translate-x-0');
                 mobileMenu.classList.add('translate-x-full');
                 mobileMenu.classList.remove('open');
                 themeToggle.classList.remove('hidden');
                 document.body.classList.remove('no-scroll');
-            }, 500); // Adjust delay based on scroll duration
-        } else {
-            console.error('Target section not found:', href);
-            // Fallback: Scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('translate-x-0');
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.classList.remove('open');
-            themeToggle.classList.remove('hidden');
-            document.body.classList.remove('no-scroll');
+            }
+        } catch (error) {
+            console.error('Navigation error:', error);
         }
     });
 });
