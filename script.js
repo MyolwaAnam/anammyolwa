@@ -17,15 +17,21 @@ themeToggle.addEventListener('click', (e) => {
 });
 
 // Smooth Scrolling for Nav Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Nav link clicked:', this.getAttribute('href'));
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-        // Close mobile menu after clicking
+        console.log('Mobile nav link clicked:', this.getAttribute('href'));
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else {
+            console.error('Target section not found:', this.getAttribute('href'));
+        }
+        // Close mobile menu
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
