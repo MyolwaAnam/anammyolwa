@@ -26,6 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
         mobileMenu.classList.remove('open');
+        themeToggle.classList.remove('hidden');
     });
 });
 
@@ -39,6 +40,7 @@ menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('translate-x-full');
     mobileMenu.classList.toggle('translate-x-0');
     mobileMenu.classList.toggle('open');
+    themeToggle.classList.toggle('hidden');
 });
 
 menuClose.addEventListener('click', () => {
@@ -46,6 +48,7 @@ menuClose.addEventListener('click', () => {
     mobileMenu.classList.remove('translate-x-0');
     mobileMenu.classList.add('translate-x-full');
     mobileMenu.classList.remove('open');
+    themeToggle.classList.remove('hidden');
 });
 
 // Active Section Highlight
