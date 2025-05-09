@@ -1,11 +1,26 @@
 /* Custom Styles */
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+}
+
 body {
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+}
+
+.bg-pattern {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+    background-size: 20px 20px;
 }
 
 #hero {
     background-attachment: fixed;
     background-size: cover;
+}
+
+nav {
+    transition: background-color 0.3s ease;
 }
 
 .skill-card, .experience-card, .project-card {
@@ -14,7 +29,7 @@ body {
 
 .skill-card:hover, .experience-card:hover, .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 #theme-toggle i {
@@ -23,4 +38,21 @@ body {
 
 #theme-toggle:hover i {
     transform: rotate(360deg);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    #hero img {
+        width: 120px;
+        height: 120px;
+    }
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1.25rem;
+    }
 }
