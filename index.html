@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 font-poppins">
-    <button id="theme-toggle" class="fixed top-20 right-4 p-2 bg-teal-500 text-white rounded-full z-5 hover:bg-teal-600 transition-transform duration-300 md:top-4 pointer-events-auto cursor-pointer">
+    <button id="theme-toggle" class="fixed top-20 right-4 p-2 bg-teal-500 text-white rounded-full z-20 hover:bg-teal-600 transition-transform duration-300 md:top-4 pointer-events-auto cursor-pointer">
         <i class="fas fa-moon"></i>
     </button>
 
@@ -27,23 +27,23 @@
                 <a href="#education" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200"><i class="fas fa-book mr-2"></i>Education</a>
                 <a href="#contact" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200"><i class="fas fa-envelope mr-2"></i>Contact Me</a>
             </div>
-            <button id="menu-toggle" class="md:hidden text-teal-500 hover:text-teal-400 transition-colors duration-200 z-100 relative pointer-events-auto cursor-pointer">
+            <button id="menu-toggle" class="md:hidden text-teal-500 hover:text-teal-400 transition-colors duration-200 z-30 relative pointer-events-auto cursor-pointer">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
     </nav>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-8 left-0 right-0 h-auto max-h-[60vh] max-w-xl mx-auto bg-white dark:bg-gray-800 z-[2147483647] transform translate-x-full transition-transform duration-300 p-8 shadow-xl pointer-events-auto">
-        <button id="menu-close" class="absolute top-4 right-8 p-6 bg-gray-200/30 dark:bg-gray-700/30 text-teal-500 hover:text-teal-400 transition-colors duration-200 z-[2147483648] relative pointer-events-auto cursor-pointer">
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white dark:bg-gray-800 z-[2147483647] flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+        <button id="menu-close" class="fixed top-4 left-1/2 transform -translate-x-1/2 p-6 bg-gray-200/30 dark:bg-gray-700/30 text-teal-500 hover:text-teal-400 transition-colors duration-200 z-[2147483648] pointer-events-auto cursor-pointer">
             <i class="fas fa-times text-5xl leading-none"></i>
         </button>
-        <div class="flex flex-col items-center justify-start pt-16 space-y-2">
-            <a href="#about" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-user mr-2"></i>About</a>
-            <a href="#skills" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-tools mr-2"></i>Skills</a>
-            <a href="#experience" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-briefcase mr-2"></i>Experience</a>
-            <a href="#projects" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-project-diagram mr-2"></i>Projects</a>
-            <a href="#education" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-book mr-2"></i>Education</a>
-            <a href="#contact" class="nav-link text-teal-500 text-lg hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-envelope mr-2"></i>Contact Me</a>
+        <div class="flex flex-col items-center justify-center gap-4 text-xl">
+            <a href="#about" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-user mr-2"></i>About</a>
+            <a href="#skills" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-tools mr-2"></i>Skills</a>
+            <a href="#experience" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-briefcase mr-2"></i>Experience</a>
+            <a href="#projects" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-project-diagram mr-2"></i>Projects</a>
+            <a href="#education" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-book mr-2"></i>Education</a>
+            <a href="#contact" class="nav-link text-teal-500 hover:text-teal-400 transition-colors duration-200 pointer-events-auto cursor-pointer"><i class="fas fa-envelope mr-2"></i>Contact Me</a>
         </div>
     </div>
 
