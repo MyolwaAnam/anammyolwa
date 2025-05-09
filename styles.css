@@ -63,6 +63,10 @@ input:focus, textarea:focus {
     transform: scale(1.2);
 }
 
+#mobile-menu.open ~ #theme-toggle {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     #hero img {
         width: 120px;
