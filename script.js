@@ -8,7 +8,9 @@ AOS.init({
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-themeToggle.addEventListener('click', () => {
+themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    console.log('Theme toggle clicked');
     html.classList.toggle('dark');
     const isDark = html.classList.contains('dark');
     themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
@@ -18,6 +20,8 @@ themeToggle.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
+        console.log('Nav link clicked:', this.getAttribute('href'));
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
@@ -36,7 +40,9 @@ const menuToggle = document.getElementById('menu-toggle');
 const menuClose = document.getElementById('menu-close');
 const mobileMenu = document.getElementById('mobile-menu');
 
-menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    console.log('Menu toggle clicked');
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('translate-x-full');
     mobileMenu.classList.toggle('translate-x-0');
@@ -45,7 +51,9 @@ menuToggle.addEventListener('click', () => {
     document.body.classList.toggle('no-scroll');
 });
 
-menuClose.addEventListener('click', () => {
+menuClose.addEventListener('click', (e) => {
+    e.stopPropagation();
+    console.log('Menu close clicked');
     mobileMenu.classList.add('hidden');
     mobileMenu.classList.remove('translate-x-0');
     mobileMenu.classList.add('translate-x-full');
