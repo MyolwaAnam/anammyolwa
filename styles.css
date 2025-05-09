@@ -67,6 +67,26 @@ input:focus, textarea:focus {
     display: none !important;
 }
 
+#mobile-menu {
+    background-color: #ffffff; /* Fallback for light mode */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+#mobile-menu.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#mobile-menu:not(.open) {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+#mobile-menu.dark {
+    background-color: #1f2937; /* Fallback for dark mode */
+}
+
 @media (max-width: 768px) {
     #hero img {
         width: 120px;
