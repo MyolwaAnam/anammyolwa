@@ -21,15 +21,18 @@ document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Mobile nav link clicked:', this.getAttribute('href'));
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        console.log('Mobile nav link clicked:', href);
+        const target = document.querySelector(href);
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         } else {
-            console.error('Target section not found:', this.getAttribute('href'));
+            console.error('Target section not found:', href);
         }
         // Close mobile menu
         mobileMenu.classList.add('hidden');
