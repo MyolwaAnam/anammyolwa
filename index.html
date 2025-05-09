@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anam Myolwa - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-teal-500 text-white rounded-full z-50">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-500 to-purple-600 text-white">
+        <div class="text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold">Anam Myolwa</h1>
+            <p class="text-xl md:text-2xl mt-4">Junior Software Developer</p>
+            <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-100">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+            <p class="text-lg">Driven Computer Science Honours graduate with expertise in full-stack web development and system administration. Certified in Microsoft Azure, CompTIA Security+, and A+, I specialize in delivering secure, scalable applications. Passionate about solving complex problems and contributing to innovative tech solutions.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-200 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Core Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Languages</h3>
+                    <p>Python, Java, SQL, HTML5, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Tools/Frameworks</h3>
+                    <p>Django, Flask, MySQL Workbench, Linux, Azure, Gunicorn, Nginx, VS Code</p>
+                </div>
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Expertise</h3>
+                    <p>Full-Stack Development, RESTful APIs, Database Security, Network Troubleshooting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
+            <div class="space-y-8">
+                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Software Developer Intern</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Department of Sport, Arts and Culture, Pretoria | May 2024 – Present</p>
+                    <ul class="list-disc pl-6 mt-2">
+                        <li>Build full-stack web applications using Python, Django, and MySQL, improving user engagement.</li>
+                        <li>Develop secure RESTful APIs, integrating third-party services for seamless functionality.</li>
+                        <li>Optimize databases with encryption, ensuring data security and performance.</li>
+                        <li>Deploy Linux-based applications with Gunicorn/Nginx, maintaining 99% uptime.</li>
+                        <li>Test and audit code, reducing vulnerabilities by 20%.</li>
+                    </ul>
+                </div>
+                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Computer Science Tutor</h3>
+                    <p class="text-gray-600 dark:text-gray-300">University of Fort Hare, Alice | Apr 2023 – Dec 2023</p>
+                    <ul class="list-disc pl-6 mt-2">
+                        <li>Mentored 30+ students in Python, Java, and C++, boosting coding skills.</li>
+                        <li>Guided beginners in core concepts, fostering engaging learning sessions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-200 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Big Walk Registration System</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Sep 2024</p>
+                    <p>Developed Django-based platform for 500+ event registrations, streamlining access.</p>
+                    <a href="https://thebigwalk.dsac.gov.za" class="text-teal-500 hover:underline">View Project</a>
+                </div>
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Movie Booking System</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Aug 2023</p>
+                    <p>Built Java-based ticketing system with secure login and seat selection.</p>
+                </div>
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Crop Recommender System</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Jun 2022</p>
+                    <p>Created machine learning model to optimize crop selection using environmental data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-16">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Education & Certifications</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold">Education</h3>
+                    <p>B.Sc. Honours in Computer Science, University of Fort Hare, Alice | 2023</p>
+                    <p>B.Sc. in Computer Science, University of Fort Hare, Alice | 2019 – 2022</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Certifications</h3>
+                    <ul class="list-disc pl-6">
+                        <li>Microsoft Azure Administrator, Alison, 2025</li>
+                        <li>CompTIA Security+, Alison, 2025</li>
+                        <li>CompTIA A+, Alison, 2025</li>
+                        <li>Advanced Linux Administration & Shell Scripting, Packt, 2024</li>
+                        <li>Technical Support Fundamentals, Google, 2024</li>
+                        <li>Next-Generation Firewalls & Intrusion Prevention, LearnQuest, 2024</li>
+                        <li>Core 1: Hardware & Network Troubleshooting, IBM, 2024</li>
+                        <li>Introduction to Cybersecurity, CISCO, 2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-200 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+            <form class="space-y-4 max-w-lg mx-auto">
+                <input type="text" placeholder="Name" class="w-full p-3 rounded-lg">
+                <input type="email" placeholder="Email" class="w-full p-3 rounded-lg">
+                <textarea placeholder="Message" class="w-full p-3 rounded-lg h-32"></textarea>
+                <button type="submit" class="w-full p-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600">Send Message</button>
+            </form>
+            <div class="mt-8 text-center">
+                <p>Email: <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 hover:underline">anammyolwa@gmail.com</a></p>
+                <p>Phone: <a href="tel:+27640434984" class="text-teal-500 hover:underline">+27 64 043 4984</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 hover:underline">linkedin.com/in/anam-myolwa</a></p>
+                <p>Portfolio: <a href="https://66a782c04276d.site123.me" class="text-teal-500 hover:underline">66a782c04276d.site123.me</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-white text-center">
+        <p>© 2025 Anam Myolwa. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 mx-2"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 mx-2"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
