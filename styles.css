@@ -15,7 +15,6 @@ body {
 }
 
 #hero {
-    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -68,27 +67,29 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu {
-    background-color: #ffffff; /* Light mode */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0;
+    background-color: #ffffff !important; /* Light mode */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    backdrop-filter: blur(4px);
 }
 
 #mobile-menu.open {
     transform: translateX(0);
-    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 #mobile-menu:not(.open) {
     transform: translateX(100%);
-    opacity: 0;
 }
 
 #mobile-menu.dark {
-    background-color: #1f2937; /* Dark mode */
+    background-color: #1f2937 !important; /* Dark mode */
 }
 
 body.no-scroll {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
