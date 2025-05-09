@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
         console.log('Closing mobile menu');
         mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
         mobileMenu.classList.remove('open');
         themeToggle.classList.remove('hidden');
         document.body.classList.remove('no-scroll');
@@ -34,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             console.log('Menu toggle clicked');
             mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('translate-x-full');
-            mobileMenu.classList.toggle('translate-x-0');
             mobileMenu.classList.toggle('open');
             themeToggle.classList.toggle('hidden');
             document.body.classList.toggle('no-scroll');
@@ -64,18 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.querySelector(href);
                 if (target) {
                     console.log('Scroll initiated to:', href);
+                    const navHeight = 64;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                     setTimeout(() => {
-                        const navHeight = 64;
-                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        // Fallback to scrollIntoView
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         console.log('Scroll completed to:', href);
                         closeMenu();
-                    }, 100); // Delay to allow transitions
+                    }, 1000);
                 } else {
                     console.error('Target section not found:', href);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
