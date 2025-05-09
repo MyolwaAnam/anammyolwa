@@ -6,6 +6,8 @@
     <title>Anam Myolwa - Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" href="images/images.png" type="image/png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS for Animations -->
@@ -15,78 +17,79 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 font-poppins">
     <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-teal-500 text-white rounded-full z-50">
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-teal-500 text-white rounded-full z-50 hover:bg-teal-600 transition-transform duration-300">
         <i class="fas fa-moon"></i>
     </button>
 
     <!-- Navigation Menu -->
-    <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-40">
+    <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-40 backdrop-blur-md bg-opacity-80 dark:bg-opacity-80">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
-            <div class="text-xl font-bold">Anam Myolwa</div>
+            <div class="text-2xl font-bold text-teal-500">Anam Myolwa</div>
             <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-teal-500 hover:underline">About</a>
-                <a href="#mytech" class="text-teal-500 hover:underline">MyTech</a>
-                <a href="#contact" class="text-teal-500 hover:underline">Contact Me</a>
+                <a href="#about" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">About</a>
+                <a href="#mytech" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">MyTech</a>
+                <a href="#contact" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">Contact Me</a>
             </div>
-            <button id="menu-toggle" class="md:hidden text-teal-500">
+            <button id="menu-toggle" class="md:hidden text-teal-500 hover:text-teal-400 transition-colors duration-200">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800">
-            <a href="#about" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-            <a href="#mytech" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700">MyTech</a>
-            <a href="#contact" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Me</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 backdrop-blur-md bg-opacity-80 dark:bg-opacity-80">
+            <a href="#about" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">About</a>
+            <a href="#mytech" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">MyTech</a>
+            <a href="#contact" class="block px-4 py-2 text-teal-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">Contact Me</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-500 to-purple-600 text-white pt-16">
-        <div class="text-center" data-aos="fade-up">
-            <img src="images/Myolwa.jpg" alt="Anam Myolwa" class="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto mb-4 object-cover border-4 border-white">
-            <h1 class="text-5xl md:text-7xl font-bold">Anam Myolwa</h1>
-            <p class="text-xl md:text-2xl mt-4">Junior Software Developer</p>
-            <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-100">Get in Touch</a>
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-500 via-teal-600 to-purple-700 text-white pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+        <div class="text-center z-10" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="images/Myolwa.jpg" alt="Anam Myolwa" class="w-40 h-40 md:w-56 md:h-56 rounded-full mx-auto mb-6 object-cover border-6 border-white shadow-lg">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Anam Myolwa</h1>
+            <p class="text-xl md:text-3xl mt-4 font-light">Junior Software Developer</p>
+            <a href="#contact" class="mt-8 inline-block px-8 py-4 bg-white text-teal-600 font-semibold rounded-full hover:bg-teal-100 hover:scale-105 transition-transform duration-300 shadow-md">Get in Touch</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16">
-        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-            <p class="text-lg">Driven Computer Science Honours graduate with expertise in full-stack web development and system administration. Certified in Microsoft Azure, CompTIA Security+, and A+, I specialize in delivering secure, scalable applications. Passionate about solving complex problems and contributing to innovative tech solutions.</p>
+    <section id="about" class="py-20">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-600 dark:text-teal-400">About Me</h2>
+            <p class="text-lg leading-relaxed">Driven Computer Science Honours graduate with expertise in full-stack web development and system administration. Certified in Microsoft Azure, CompTIA Security+, and A+, I specialize in delivering secure, scalable applications. Passionate about solving complex problems and contributing to innovative tech solutions.</p>
         </div>
     </section>
 
     <!-- MyTech Section -->
-    <section id="mytech" class="py-16 bg-gray-200 dark:bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-center mb-8">MyTech</h2>
+    <section id="mytech" class="py-20 bg-gray-200 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-600 dark:text-teal-400">MyTech</h2>
             <!-- Skills -->
-            <h3 class="text-2xl font-semibold mb-4">Core Skills</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Languages</h4>
-                    <p>Python, Java, SQL, HTML5, CSS, JavaScript</p>
+            <h3 class="text-2xl font-semibold mb-6">Core Skills</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in">
+                    <h4 class="text-xl font-semibold text-teal-500">Languages</h4>
+                    <p class="mt-2">Python, Java, SQL, HTML5, CSS, JavaScript</p>
                 </div>
-                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Tools/Frameworks</h4>
-                    <p>Django, Flask, MySQL Workbench, Linux, Azure, Gunicorn, Nginx, VS Code</p>
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-xl font-semibold text-teal-500">Tools/Frameworks</h4>
+                    <p class="mt-2">Django, Flask, MySQL Workbench, Linux, Azure, Gunicorn, Nginx, VS Code</p>
                 </div>
-                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Expertise</h4>
-                    <p>Full-Stack Development, RESTful APIs, Database Security, Network Troubleshooting</p>
+                <div class="skill-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-xl font-semibold text-teal-500">Expertise</h4>
+                    <p class="mt-2">Full-Stack Development, RESTful APIs, Database Security, Network Troubleshooting</p>
                 </div>
             </div>
             <!-- Experience -->
-            <h3 class="text-2xl font-semibold mb-4">Experience</h3>
-            <div class="space-y-8 mb-8">
-                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Software Developer Intern</h4>
-                    <p class="text-gray-600 dark:text-gray-三百">Department of Sport, Arts and Culture, Pretoria | May 2024 – Present</p>
-                    <ul class="list-disc pl-6 mt-2">
+            <h3 class="text-2xl font-semibold mb-6">Experience</h3>
+            <div class="space-y-8 mb-12">
+                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="fade-up">
+                    <h4 class="text-xl font-semibold text-teal-500">Software Developer Intern</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Department of Sport, Arts and Culture, Pretoria | May 2024 – Present</p>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700 dark:text-gray-200">
                         <li>Build full-stack web applications using Python, Django, and MySQL, improving user engagement.</li>
                         <li>Develop secure RESTful APIs, integrating third-party services for seamless functionality.</li>
                         <li>Optimize databases with encryption, ensuring data security and performance.</li>
@@ -94,51 +97,51 @@
                         <li>Test and audit code, reducing vulnerabilities by 20%.</li>
                     </ul>
                 </div>
-                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Computer Science Tutor</h4>
+                <div class="experience-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-xl font-semibold text-teal-500">Computer Science Tutor</h4>
                     <p class="text-gray-600 dark:text-gray-300">University of Fort Hare, Alice | Apr 2023 – Dec 2023</p>
-                    <ul class="list-disc pl-6 mt-2">
+                    <ul class="list-disc pl-6 mt-2 text-gray-700 dark:text-gray-200">
                         <li>Mentored 30+ students in Python, Java, and C++, boosting coding skills.</li>
                         <li>Guided beginners in core concepts, fostering engaging learning sessions.</li>
                     </ul>
                 </div>
             </div>
             <!-- Projects -->
-            <h3 class="text-2xl font-semibold mb-4">Projects</h3>
+            <h3 class="text-2xl font-semibold mb-6">Projects</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Big Walk Registration System</h4>
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in">
+                    <h4 class="text-xl font-semibold text-teal-500">Big Walk Registration System</h4>
                     <p class="text-gray-600 dark:text-gray-300">Sep 2024</p>
-                    <p>Developed Django-based platform for 500+ event registrations, streamlining access.</p>
-                    <a href="https://thebigwalk.dsac.gov.za" class="text-teal-500 hover:underline">View Project</a>
+                    <p class="mt-2">Developed Django-based platform for 500+ event registrations, streamlining access.</p>
+                    <a href="https://thebigwalk.dsac.gov.za" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">View Project</a>
                 </div>
-                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Movie Booking System</h4>
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-xl font-semibold text-teal-500">Movie Booking System</h4>
                     <p class="text-gray-600 dark:text-gray-300">Aug 2023</p>
-                    <p>Built Java-based ticketing system with secure login and seat selection.</p>
+                    <p class="mt-2">Built Java-based ticketing system with secure login and seat selection.</p>
                 </div>
-                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
-                    <h4 class="text-xl font-semibold">Crop Recommender System</h4>
+                <div class="project-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-xl font-semibold text-teal-500">Crop Recommender System</h4>
                     <p class="text-gray-600 dark:text-gray-300">Jun 2022</p>
-                    <p>Created machine learning model to optimize crop selection using environmental data.</p>
+                    <p class="mt-2">Created machine learning model to optimize crop selection using environmental data.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Education & Certifications Section -->
-    <section id="education" class="py-16">
-        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-center mb-8">Education & Certifications</h2>
+    <section id="education" class="py-20">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-600 dark:text-teal-400">Education & Certifications</h2>
             <div class="space-y-8">
                 <div>
-                    <h3 class="text-xl font-semibold">Education</h3>
-                    <p>B.Sc. Honours in Computer Science, University of Fort Hare, Alice | 2023</p>
-                    <p>B.Sc. in Computer Science, University of Fort Hare, Alice | 2019 – 2022</p>
+                    <h3 class="text-2xl font-semibold text-teal-500">Education</h3>
+                    <p class="text-gray-700 dark:text-gray-200">B.Sc. Honours in Computer Science, University of Fort Hare, Alice | 2023</p>
+                    <p class="text-gray-700 dark:text-gray-200">B.Sc. in Computer Science, University of Fort Hare, Alice | 2019 – 2022</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold">Certifications</h3>
-                    <ul class="list-disc pl-6">
+                    <h3 class="text-2xl font-semibold text-teal-500">Certifications</h3>
+                    <ul class="list-disc pl-6 text-gray-700 dark:text-gray-200">
                         <li>Microsoft Azure Administrator, Alison, 2025</li>
                         <li>CompTIA Security+, Alison, 2025</li>
                         <li>CompTIA A+, Alison, 2025</li>
@@ -154,30 +157,30 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-200 dark:bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
-            <form class="space-y-4 max-w-lg mx-auto">
-                <input type="text" placeholder="Name" class="w-full p-3 rounded-lg text-gray-900 bg-white">
-                <input type="email" placeholder="Email" class="w-full p-3 rounded-lg text-gray-900 bg-white">
-                <textarea placeholder="Message" class="w-full p-3 rounded-lg text-gray-900 bg-white h-32"></textarea>
-                <button type="submit" class="w-full p-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600">Send Message</button>
+    <section id="contact" class="py-20 bg-gray-200 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-4xl font-bold text-center mb-10 text-teal-600 dark:text-teal-400">Contact Me</h2>
+            <form class="space-y-6 max-w-lg mx-auto">
+                <input type="text" placeholder="Name" class="w-full p-4 rounded-lg text-gray-900 bg-white border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500 transition-all duration-300">
+                <input type="email" placeholder="Email" class="w-full p-4 rounded-lg text-gray-900 bg-white border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500 transition-all duration-300">
+                <textarea placeholder="Message" class="w-full p-4 rounded-lg text-gray-900 bg-white border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500 transition-all duration-300 h-36"></textarea>
+                <button type="submit" class="w-full p-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-lg hover:from-teal-600 hover:to-teal-700 hover:scale-105 transition-all duration-300 shadow-md">Send Message</button>
             </form>
-            <div class="mt-8 text-center">
-                <p>Email: <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 hover:underline">anammyolwa@gmail.com</a></p>
-                <p>Phone: <a href="tel:+27640434984" class="text-teal-500 hover:underline">+27 64 043 4984</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 hover:underline">linkedin.com/in/anam-myolwa</a></p>
-                <p>Portfolio: <a href="https://66a782c04276d.site123.me" class="text-teal-500 hover:underline">66a782c04276d.site123.me</a></p>
+            <div class="mt-10 text-center space-y-2">
+                <p>Email: <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">anammyolwa@gmail.com</a></p>
+                <p>Phone: <a href="tel:+27640434984" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">+27 64 043 4984</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">linkedin.com/in/anam-myolwa</a></p>
+                <p>Portfolio: <a href="https://66a782c04276d.site123.me" class="text-teal-500 hover:text-teal-400 transition-colors duration-200">66a782c04276d.site123.me</a></p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 bg-gray-900 text-white text-center">
+    <footer class="py-8 bg-gray-900 text-white text-center">
         <p>© 2025 Anam Myolwa. All rights reserved.</p>
-        <div class="mt-4">
-            <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 mx-2"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 mx-2"><i class="fas fa-envelope"></i></a>
+        <div class="mt-4 space-x-4">
+            <a href="https://linkedin.com/in/anam-myolwa-149371239" class="text-teal-500 hover:text-teal-400 transition-colors duration-200"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="mailto:anammyolwa@gmail.com" class="text-teal-500 hover:text-teal-400 transition-colors duration-200"><i class="fas fa-envelope text-2xl"></i></a>
         </div>
     </footer>
 
