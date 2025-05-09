@@ -25,22 +25,35 @@ document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
         console.log('Mobile nav link clicked:', href);
         const target = document.querySelector(href);
         if (target) {
-            const navHeight = document.querySelector('nav').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            const offset = 64; // Fixed nav height offset (~nav height)
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
+            // Delay menu closing to ensure scrolling completes
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('open');
+                themeToggle.classList.remove('hidden');
+                document.body.classList.remove('no-scroll');
+            }, 500); // Adjust delay based on scroll duration
         } else {
             console.error('Target section not found:', href);
+            // Fallback: Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('open');
+            themeToggle.classList.remove('hidden');
+            document.body.classList.remove('no-scroll');
         }
-        // Close mobile menu
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('open');
-        themeToggle.classList.remove('hidden');
-        document.body.classList.remove('no-scroll');
     });
 });
 
