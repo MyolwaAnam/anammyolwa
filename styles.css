@@ -67,19 +67,14 @@ input:focus, textarea:focus {
 
 #mobile-menu {
     background-color: #ffffff !important;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateX(100%);
+    transition: opacity 0.3s ease-in-out;
     opacity: 0;
+    pointer-events: none;
 }
 
 #mobile-menu.open {
-    transform: translateX(0);
     opacity: 1;
-}
-
-#mobile-menu:not(.open) {
-    transform: translateX(100%);
-    opacity: 0;
+    pointer-events: auto;
 }
 
 #mobile-menu.dark {
