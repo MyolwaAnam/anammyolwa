@@ -1,113 +1,129 @@
-// Initialize AOS
-AOS.init({
-    duration: 1000,
-    once: true,
-});
-
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
-
-themeToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    console.log('Theme toggle clicked');
-    html.classList.toggle('dark');
-    const isDark = html.classList.contains('dark');
-    themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
-});
-
-// Smooth Scrolling for Nav Links
-document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const href = this.getAttribute('href');
-        console.log('Mobile nav link clicked:', href);
-        try {
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                // Delay menu closing to ensure scrolling completes
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('translate-x-0');
-                    mobileMenu.classList.add('translate-x-full');
-                    mobileMenu.classList.remove('open');
-                    themeToggle.classList.remove('hidden');
-                    document.body.classList.remove('no-scroll');
-                }, 700); // Increased delay for slower devices
-            } else {
-                console.error('Target section not found:', href);
-                // Fallback: Scroll to top
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
-                mobileMenu.classList.remove('open');
-                themeToggle.classList.remove('hidden');
-                document.body.classList.remove('no-scroll');
-            }
-        } catch (error) {
-            console.error('Navigation error:', error);
-        }
+// Ensure DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
     });
-});
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menu-toggle');
-const menuClose = document.getElementById('menu-close');
-const mobileMenu = document.getElementById('mobile-menu');
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
 
-menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    console.log('Menu toggle clicked');
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('translate-x-full');
-    mobileMenu.classList.toggle('translate-x-0');
-    mobileMenu.classList.toggle('open');
-    themeToggle.classList.toggle('hidden');
-    document.body.classList.toggle('no-scroll');
-});
+    if (themeToggle) {
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Theme toggle clicked');
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
+        });
+    } else {
+        console.error('Theme toggle not found');
+    }
 
-menuClose.addEventListener('click', (e) => {
-    e.stopPropagation();
-    console.log('Menu close clicked');
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('translate-x-0');
-    mobileMenu.classList.add('translate-x-full');
-    mobileMenu.classList.remove('open');
-    themeToggle.classList.remove('hidden');
-    document.body.classList.remove('no-scroll');
-});
+    // Mobile Menu Elements
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-// Active Section Highlight
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+    // Close Menu Function
+    const closeMenu = () => {
+        console.log('Closing mobile menu');
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('open');
+        themeToggle.classList.remove('hidden');
+        document.body.classList.remove('no-scroll');
+    };
 
-const observerOptions = {
-    root: null,
-    rootMargin: '-50% 0px -50% 0px',
-    threshold: 0
-};
+    // Menu Toggle
+    if (menuToggle) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Menu toggle clicked');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('translate-x-full');
+            mobileMenu.classList.toggle('translate-x-0');
+            mobileMenu.classList.toggle('open');
+            themeToggle.classList.toggle('hidden');
+            document.body.classList.toggle('no-scroll');
+        });
+    } else {
+        console.error('Menu toggle not found');
+    }
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${id}`) {
-                    link.classList.add('active');
+    // Menu Close
+    if (menuClose) {
+        menuClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Menu close clicked');
+            closeMenu();
+        });
+    } else {
+        console.error('Menu close not found');
+    }
+
+    // Smooth Scrolling for Nav Links
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const href = this.getAttribute('href');
+            console.log('Mobile nav link clicked:', href);
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    console.log('Scrolling to:', href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close menu after scroll (CSS handles timing)
+                    setTimeout(closeMenu, 300); // Match CSS transition duration
+                } else {
+                    console.error('Target section not found:', href);
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    closeMenu();
+                }
+            } catch (error) {
+                console.error('Navigation error:', error);
+                closeMenu();
+            }
+        });
+    });
+
+    // Active Section Highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (sections.length && navLinks.length) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
-        }
-    });
-}, observerOptions);
+        }, observerOptions);
 
-sections.forEach(section => observer.observe(section));
+        sections.forEach(section => observer.observe(section));
+    } else {
+        console.warn('No sections or nav links found for active highlighting');
+    }
+});
