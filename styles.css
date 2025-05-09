@@ -23,6 +23,17 @@ nav {
     transition: background-color 0.3s ease;
 }
 
+.nav-link.active {
+    font-weight: 700;
+    border-bottom: 2px solid teal;
+    color: #14b8a6 !important;
+}
+
+#mobile-menu .nav-link.active {
+    font-weight: 700;
+    color: #14b8a6 !important;
+}
+
 .skill-card, .experience-card, .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
