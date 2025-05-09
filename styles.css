@@ -66,7 +66,7 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu {
-    background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.9), rgba(147, 51, 234, 0.9));
+    background: linear-gradient(to bottom right, rgba(45, 212, 191, 0.8), rgba(139, 92, 246, 0.8));
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     opacity: 0;
     transform: scale(0.95);
@@ -80,7 +80,7 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu.dark {
-    background: linear-gradient(to bottom right, rgba(13, 148, 136, 0.9), rgba(107, 33, 168, 0.9));
+    background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.8), rgba(107, 33, 168, 0.8));
 }
 
 #mobile-menu.open #hero,
