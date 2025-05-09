@@ -68,7 +68,7 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu {
-    background-color: #ffffff; /* Fallback for light mode */
+    background-color: #ffffff; /* Light mode */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
 }
@@ -84,7 +84,11 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu.dark {
-    background-color: #1f2937; /* Fallback for dark mode */
+    background-color: #1f2937; /* Dark mode */
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
