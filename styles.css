@@ -66,25 +66,57 @@ input:focus, textarea:focus {
 }
 
 #mobile-menu {
-    background-color: #ffffff !important;
-    transition: opacity 0.3s ease-in-out;
+    background: linear-gradient(to bottom right, rgba(20, 184, 166, 0.9), rgba(147, 51, 234, 0.9));
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     opacity: 0;
+    transform: scale(0.95);
     pointer-events: none;
 }
 
 #mobile-menu.open {
     opacity: 1;
+    transform: scale(1);
     pointer-events: auto;
 }
 
 #mobile-menu.dark {
-    background-color: #1f2937 !important;
+    background: linear-gradient(to bottom right, rgba(13, 148, 136, 0.9), rgba(107, 33, 168, 0.9));
 }
 
 #mobile-menu.open #hero,
 #mobile-menu.open .bg-pattern,
 #mobile-menu.open #hero > div {
     pointer-events: none;
+}
+
+#mobile-menu .menu-container {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu .nav-link {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.open .nav-link {
+    animation: slideIn 0.5s ease forwards;
+}
+
+#mobile-menu.open .nav-link:nth-child(1) { animation-delay: 0.1s; }
+#mobile-menu.open .nav-link:nth-child(2) { animation-delay: 0.2s; }
+#mobile-menu.open .nav-link:nth-child(3) { animation-delay: 0.3s; }
+#mobile-menu.open .nav-link:nth-child(4) { animation-delay: 0.4s; }
+#mobile-menu.open .nav-link:nth-child(5) { animation-delay: 0.5s; }
+#mobile-menu.open .nav-link:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 body.no-scroll {
