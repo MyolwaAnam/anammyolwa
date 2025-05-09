@@ -25,8 +25,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
-        // Show theme toggle
-        themeToggle.classList.remove('hidden');
+        mobileMenu.classList.remove('open');
     });
 });
 
@@ -39,16 +38,14 @@ menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('translate-x-full');
     mobileMenu.classList.toggle('translate-x-0');
-    // Hide theme toggle when menu is open
-    themeToggle.classList.toggle('hidden');
+    mobileMenu.classList.toggle('open');
 });
 
 menuClose.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
     mobileMenu.classList.remove('translate-x-0');
     mobileMenu.classList.add('translate-x-full');
-    // Show theme toggle
-    themeToggle.classList.remove('hidden');
+    mobileMenu.classList.remove('open');
 });
 
 // Active Section Highlight
