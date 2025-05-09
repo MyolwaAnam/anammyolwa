@@ -53,26 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation();
             const href = this.getAttribute('href');
             console.log('Mobile nav link clicked:', href);
             try {
                 const target = document.querySelector(href);
                 if (target) {
-                    console.log('Scroll initiated to:', href);
-                    const navHeight = 64;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    console.log('Section found:', href);
+                    // Remove no-scroll to allow scrolling
+                    document.body.classList.remove('no-scroll');
                     setTimeout(() => {
-                        console.log('Scroll completed to:', href);
-                        closeMenu();
-                    }, 1000);
+                        console.log('Scroll initiated to:', href);
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        setTimeout(() => {
+                            console.log('Scroll completed to:', href);
+                            closeMenu();
+                        }, 1200);
+                    }, 200);
                 } else {
                     console.error('Target section not found:', href);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                     closeMenu();
                 }
             } catch (error) {
@@ -100,7 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 });
 
-        sections.forEach(section => observer.observe(section));
+        sections.forEach(section => {
+            console.log('Observing section:', section.id);
+            observer.observe(section);
+        });
     } else {
         console.warn('No sections or nav links found for active highlighting');
     }
@@ -112,4 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn('Close button may be clipped:', rect);
         }
     }
+
+    // Log all section IDs for debugging
+    sections.forEach(section => {
+        console.log('Section ID in DOM:', section.id);
+    });
 });
