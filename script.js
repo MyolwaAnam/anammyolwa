@@ -75,13 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const target = document.querySelector(href);
                 if (target) {
-                    console.log('Scrolling to:', href);
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    console.log('Attempting scroll to:', href);
+                    const navHeight = 64; // Fixed nav height
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
-                    // Close menu after scroll (CSS handles timing)
-                    setTimeout(closeMenu, 300); // Match CSS transition duration
+                    // Wait for scroll to complete
+                    const scrollCheck = setInterval(() => {
+                        if (Math.abs(window.pageYOffset - targetPosition) < 10) {
+                            console.log('Scroll completed to:', href);
+                            clearInterval(scrollCheck);
+                            closeMenu();
+                        }
+                    }, 100);
+                    // Fallback timeout
+                    setTimeout(() => {
+                        clearInterval(scrollCheck);
+                        closeMenu();
+                    }, 800);
                 } else {
                     console.error('Target section not found:', href);
                     window.scrollTo({
@@ -125,5 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => observer.observe(section));
     } else {
         console.warn('No sections or nav links found for active highlighting');
+    }
+
+    // Check Close Button Visibility
+    if (menuClose) {
+        const rect = menuClose.getBoundingClientRect();
+        console.log('Close button position:', rect);
+        if (rect.right > window.innerWidth || rect.left < 0) {
+            console.warn('Close button may be clipped:', rect);
+        }
     }
 });
