@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.querySelector(href);
                 if (target) {
                     console.log('Section found:', href);
-                    // Remove no-scroll to allow scrolling
                     document.body.classList.remove('no-scroll');
                     setTimeout(() => {
                         console.log('Scroll initiated to:', href);
@@ -117,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Log all section IDs for debugging
     sections.forEach(section => {
         console.log('Section ID in DOM:', section.id);
     });
