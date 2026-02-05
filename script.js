@@ -1,122 +1,115 @@
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 1000, once: true });
+// Spotlight cursor effect
+const spotlight = document.getElementById('spotlight');
 
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
+document.addEventListener('mousemove', (e) => {
+    spotlight.style.setProperty('--x', e.clientX + 'px');
+    spotlight.style.setProperty('--y', e.clientY + 'px');
+});
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            console.log('Theme toggle clicked');
-            html.classList.toggle('dark');
-            themeToggle.innerHTML = `<i class="fas fa-${html.classList.contains('dark') ? 'sun' : 'moon'}"></i>`;
-        });
-    } else {
-        console.error('Theme toggle not found');
-    }
+// Active navigation link highlighting
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    const closeMenu = () => {
-        console.log('Closing mobile menu');
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('open');
-        themeToggle.classList.remove('hidden');
-        document.body.classList.remove('no-scroll');
-    };
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            console.log('Menu toggle clicked');
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('open');
-            themeToggle.classList.toggle('hidden');
-            document.body.classList.toggle('no-scroll');
-        });
-    } else {
-        console.error('Menu toggle not found');
-    }
-
-    if (menuClose) {
-        menuClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            console.log('Menu close clicked');
-            closeMenu();
-        });
-    } else {
-        console.error('Menu close not found');
-    }
-
-    document.querySelectorAll('#mobile-menu .nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            console.log('Mobile nav link clicked:', href);
-            try {
-                const target = document.querySelector(href);
-                if (target) {
-                    console.log('Section found:', href);
-                    document.body.classList.remove('no-scroll');
-                    setTimeout(() => {
-                        console.log('Scroll initiated to:', href);
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        setTimeout(() => {
-                            console.log('Scroll completed to:', href);
-                            closeMenu();
-                        }, 1200);
-                    }, 200);
-                } else {
-                    console.error('Target section not found:', href);
-                    closeMenu();
-                }
-            } catch (error) {
-                console.error('Navigation error:', error);
-                closeMenu();
-            }
-        });
-    });
-
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (sections.length && navLinks.length) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 });
-
-        sections.forEach(section => {
-            console.log('Observing section:', section.id);
-            observer.observe(section);
-        });
-    } else {
-        console.warn('No sections or nav links found for active highlighting');
-    }
-
-    if (menuClose) {
-        const rect = menuClose.getBoundingClientRect();
-        console.log('Close button position:', rect);
-        if (rect.right > window.innerWidth || rect.left < 0 || rect.width < 50) {
-            console.warn('Close button may be clipped:', rect);
-        }
-    }
-
+function setActiveLink() {
+    let current = 'about';
+    
     sections.forEach(section => {
-        console.log('Section ID in DOM:', section.id);
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
     });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveLink);
+window.addEventListener('load', setActiveLink);
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Close mobile nav if open
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav && mobileNav.classList.contains('open')) {
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+    });
+});
+
+// Mobile navigation
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileNavClose = document.getElementById('mobile-nav-close');
+const mobileNav = document.getElementById('mobile-nav');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+if (mobileNavClose) {
+    mobileNavClose.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+}
+
+// Close mobile nav when clicking outside
+if (mobileNav) {
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) {
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Add subtle entrance animations on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe cards for animation
+document.querySelectorAll('.experience-card, .project-card, .skill-category, .education-item, .cert-item').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// Keyboard navigation for accessibility
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+        mobileMenuBtn.focus();
+    }
 });
