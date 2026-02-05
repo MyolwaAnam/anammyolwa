@@ -1,115 +1,158 @@
-// Spotlight cursor effect
-const spotlight = document.getElementById('spotlight');
-
+// ===== Spotlight Effect =====
 document.addEventListener('mousemove', (e) => {
-    spotlight.style.setProperty('--x', e.clientX + 'px');
-    spotlight.style.setProperty('--y', e.clientY + 'px');
+    const spotlight = document.getElementById('spotlight');
+    if (spotlight) {
+        spotlight.style.setProperty('--mouse-x', `${e.clientX}px`);
+        spotlight.style.setProperty('--mouse-y', `${e.clientY}px`);
+    }
 });
 
-// Active navigation link highlighting
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
+// ===== Mobile Menu Toggle =====
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-function setActiveLink() {
-    let current = 'about';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
     });
 }
 
-window.addEventListener('scroll', setActiveLink);
-window.addEventListener('load', setActiveLink);
-
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
+// ===== Smooth Scroll for Navigation Links =====
+const navLinks = document.querySelectorAll('a[href^="#"]');
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-            
-            // Close mobile nav if open
-            const mobileNav = document.getElementById('mobile-nav');
-            if (mobileNav && mobileNav.classList.contains('open')) {
-                mobileNav.classList.remove('open');
-                document.body.style.overflow = '';
-            }
         }
     });
 });
 
-// Mobile navigation
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileNavClose = document.getElementById('mobile-nav-close');
-const mobileNav = document.getElementById('mobile-nav');
+// ===== Header Background on Scroll =====
+const header = document.querySelector('.header');
+let lastScroll = 0;
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    });
-}
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+        header.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
+    } else {
+        header.style.boxShadow = 'none';
+    }
+    
+    lastScroll = currentScroll;
+});
 
-if (mobileNavClose) {
-    mobileNavClose.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-    });
-}
-
-// Close mobile nav when clicking outside
-if (mobileNav) {
-    mobileNav.addEventListener('click', (e) => {
-        if (e.target === mobileNav) {
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-    });
-}
-
-// Add subtle entrance animations on scroll
+// ===== Fade In Animation on Scroll =====
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
-// Observe cards for animation
-document.querySelectorAll('.experience-card, .project-card, .skill-category, .education-item, .cert-item').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
+// Add fade-in class to sections and observe them
+document.querySelectorAll('.section, .experience-card, .project-card, .skill-category, .education-card, .certification-item').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
 });
 
-// Keyboard navigation for accessibility
+// ===== Active Navigation Link Highlight =====
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navItems.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// ===== Typing Effect for Hero Subtitle =====
+const heroSubtitle = document.querySelector('.hero-subtitle');
+if (heroSubtitle) {
+    const text = heroSubtitle.textContent;
+    heroSubtitle.textContent = '';
+    heroSubtitle.style.borderRight = '2px solid var(--accent)';
+    
+    let i = 0;
+    const typeWriter = () => {
+        if (i < text.length) {
+            heroSubtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        } else {
+            setTimeout(() => {
+                heroSubtitle.style.borderRight = 'none';
+            }, 1000);
+        }
+    };
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+}
+
+// ===== Skill Items Hover Effect =====
+const skillItems = document.querySelectorAll('.skill-item');
+skillItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'scale(1.05)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
+    });
+});
+
+// ===== Close mobile menu on escape key =====
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
-        mobileNav.classList.remove('open');
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
-        mobileMenuBtn.focus();
     }
+});
+
+// ===== Prevent Flash of Unstyled Content =====
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
 });
