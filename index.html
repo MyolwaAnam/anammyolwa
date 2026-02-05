@@ -10,407 +10,443 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="spotlight" id="spotlight"></div>
-    
-    <div class="layout">
-        <!-- Left Sidebar -->
-        <header class="sidebar">
-            <div class="sidebar-content">
-                <div class="sidebar-top">
-                    <h1 class="name">Anam Myolwa</h1>
-                    <h2 class="title">Software Developer</h2>
-                    <p class="tagline">I build secure, scalable applications and craft elegant digital experiences.</p>
-                    
-                    <nav class="nav">
-                        <a href="#about" class="nav-link active">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">About</span>
-                        </a>
-                        <a href="#experience" class="nav-link">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">Experience</span>
-                        </a>
-                        <a href="#projects" class="nav-link">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">Projects</span>
-                        </a>
-                        <a href="#skills" class="nav-link">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">Skills</span>
-                        </a>
-                        <a href="#education" class="nav-link">
-                            <span class="nav-indicator"></span>
-                            <span class="nav-text">Education</span>
-                        </a>
-                    </nav>
+    <!-- Spotlight Effect -->
+    <div id="spotlight" class="spotlight"></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">AM</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#education" class="mobile-link">Education</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <img src="images/Myolwa.jpg" alt="Anam Myolwa" class="hero-image">
+                    <div class="hero-image-ring"></div>
                 </div>
-                
-                <div class="sidebar-bottom">
-                    <div class="social-links">
-                        <a href="https://github.com/anammyolwa" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/anam-myolwa-149371239" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:anammyolwa@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="tel:+27640434984" aria-label="Phone">
-                            <i class="fas fa-phone"></i>
-                        </a>
+                <h1 class="hero-title">Anam Myolwa</h1>
+                <h2 class="hero-subtitle">Software Developer & MSc Candidate</h2>
+                <p class="hero-description">I build secure, scalable enterprise applications with modern frameworks and cloud infrastructure.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get in Touch
+                    </a>
+                    <a href="resume/Anam_Myolwa_CV_2025.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/myolwaanam" target="_blank" aria-label="GitHub" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anam-myolwa" target="_blank" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:anammyolwa@gmail.com" aria-label="Email" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <p>Versatile Software Developer and MSc Computer Science candidate specializing in <span class="highlight">Digital Forensics</span>, <span class="highlight">Cybersecurity</span>, and <span class="highlight">Full-Stack Development</span>. Demonstrated expertise in building secure, scalable enterprise applications using modern frameworks and cloud infrastructure.</p>
+                <p>Proficient in the complete SDLC from requirements analysis through deployment, with hands-on experience in DevOps practices, containerization, and CI/CD automation. Strong foundation in data structures, algorithms, machine learning, and cryptography.</p>
+                <p>Proven ability to translate complex technical concepts into actionable solutions while maintaining security compliance and system reliability. Effective communicator and collaborative team player with leadership experience in mentoring junior developers and students.</p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-list">
+                <article class="experience-card">
+                    <div class="experience-date">May 2024 - Present</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Software Developer Intern <span class="experience-company">@ Department of Sport, Arts and Culture</span></h3>
+                        <p class="experience-location">Pretoria, Gauteng</p>
+                        <ul class="experience-duties">
+                            <li>Developed and maintained web applications using Django, HTML, CSS, and JavaScript to support programme management and event coordination</li>
+                            <li>Designed database schemas in Microsoft SQL Server and PostgreSQL, optimizing queries for reporting and data retrieval</li>
+                            <li>Built backend features including user authentication, session management, and form validation to improve data accuracy</li>
+                            <li>Implemented security measures such as input sanitization, CSRF protection, and secure coding practices across production systems</li>
+                            <li>Deployed applications on Linux servers, configuring Nginx, managing static files, and setting up production environments</li>
+                            <li>Collaborated with stakeholders to gather requirements and deliver features within Agile sprint cycles</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Nginx</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="experience-card">
+                    <div class="experience-date">Mar 2023 - Dec 2023</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Computer Science Tutor & Teaching Assistant <span class="experience-company">@ University of Fort Hare</span></h3>
+                        <p class="experience-location">Alice, Eastern Cape</p>
+                        <ul class="experience-duties">
+                            <li>Conducted hands-on lab sessions covering algorithm design, complexity analysis, software testing, debugging techniques, and version control systems</li>
+                            <li>Designed supplementary learning materials, coding exercises, and assessment rubrics aligned with curriculum objectives</li>
+                            <li>Delivered technical training workshops on Microsoft Office Suite, LaTeX document preparation, and academic research methodologies, achieving 90% satisfaction ratings</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">Teaching</span>
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Mentoring</span>
+                            <span class="tag">Version Control</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="project-title">Distributed E-Commerce Platform</h3>
+                    <p class="project-description">Developed a scalable e-commerce application using Django REST Framework backend and React frontend, implementing microservices for user authentication, product catalog, shopping cart, and payment processing (Stripe API integration).</p>
+                    <ul class="project-features">
+                        <li>Deployed containerized services using Docker Compose and Kubernetes on Azure Cloud</li>
+                        <li>Implemented Redis caching for session management and RabbitMQ message queuing</li>
+                        <li>Handling 1,000+ concurrent users with 99.9% uptime</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">React</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Azure</span>
+                    </div>
+                </article>
+                <article class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="project-title">Real-Time Data Analytics Dashboard</h3>
+                    <p class="project-description">Built an ETL pipeline using Python (pandas, Apache Airflow) to extract, transform, and load data from multiple government databases (SQL Server, Oracle) into a centralized data warehouse for business intelligence reporting.</p>
+                    <ul class="project-features">
+                        <li>Created interactive Power BI dashboards with custom DAX measures for executive-level reporting</li>
+                        <li>Serving 200+ government stakeholders with program performance and budget allocation metrics</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Apache Airflow</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">Oracle Database</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                    </div>
+                </article>
+                <article class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="project-title">Secure Student Management System</h3>
+                    <p class="project-description">Developed a comprehensive student information system using Java Spring Boot and Angular, implementing RBAC for administrators, faculty, and students with granular permission management and audit logging.</p>
+                    <ul class="project-features">
+                        <li>Integrated LDAP authentication and implemented AES-256 encryption for sensitive data at rest</li>
+                        <li>Deployed on Tomcat with SSL/TLS certificates ensuring GDPR and POPIA compliance</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">LDAP</span>
+                        <span class="tag">Tomcat</span>
+                        <span class="tag">Hibernate</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-code"></i> Languages</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">JavaScript/TypeScript</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">C/C++</span>
+                        <span class="skill-item">Bash/Shell</span>
+                        <span class="skill-item">PowerShell</span>
+                        <span class="skill-item">R</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-globe"></i> Web Frameworks</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">React.js</span>
+                        <span class="skill-item">Angular</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-database"></i> Databases</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">SQL Server</span>
+                        <span class="skill-item">Oracle Database</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Redis</span>
+                        <span class="skill-item">SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">GitLab CI/CD</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Azure</span>
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Nginx</span>
+                        <span class="skill-item">Apache</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-brain"></i> Data Science & ML</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">pandas</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">scikit-learn</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">Keras</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Jupyter</span>
+                        <span class="skill-item">Apache Spark</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-category-title"><i class="fas fa-laptop-code"></i> IDEs & Editors</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">IntelliJ IDEA</span>
+                        <span class="skill-item">PyCharm</span>
+                        <span class="skill-item">Eclipse</span>
+                        <span class="skill-item">Visual Studio</span>
+                        <span class="skill-item">Vim</span>
+                        <span class="skill-item">Sublime Text</span>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <!-- Mobile Header -->
-        <div class="mobile-header">
-            <h1 class="mobile-name">Anam Myolwa</h1>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav" id="mobile-nav">
-            <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="mobile-nav-links">
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#experience" class="mobile-nav-link">Experience</a>
-                <a href="#projects" class="mobile-nav-link">Projects</a>
-                <a href="#skills" class="mobile-nav-link">Skills</a>
-                <a href="#education" class="mobile-nav-link">Education</a>
-            </nav>
-            <div class="mobile-social-links">
-                <a href="https://github.com/anammyolwa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/anam-myolwa-149371239" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:anammyolwa@gmail.com"><i class="fas fa-envelope"></i></a>
+            <div class="competencies">
+                <h4 class="competencies-title">Core Competencies</h4>
+                <div class="competencies-grid">
+                    <span class="competency">Full-Stack Web Development</span>
+                    <span class="competency">API Design & Microservices Architecture</span>
+                    <span class="competency">Cloud Computing & Infrastructure (Azure)</span>
+                    <span class="competency">Database Design & Optimization</span>
+                    <span class="competency">DevOps & CI/CD Pipeline Management</span>
+                    <span class="competency">Container Orchestration (Docker, Kubernetes)</span>
+                    <span class="competency">Machine Learning & Data Analytics</span>
+                    <span class="competency">Agile/Scrum Methodologies</span>
+                    <span class="competency">Technical Documentation & Communication</span>
+                    <span class="competency">Team Leadership & Mentoring</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <section id="about" class="section">
-                <h3 class="section-heading-mobile">About</h3>
-                <div class="about-content">
-                    <p>I'm a versatile <span class="highlight">Software Developer</span> and <span class="highlight">MSc Computer Science candidate</span> specializing in Digital Forensics, Cybersecurity, and Full-Stack Development. Currently, I'm building secure enterprise applications at the <span class="highlight">Department of Sport, Arts and Culture</span>.</p>
-                    
-                    <p>My expertise spans the complete software development lifecycle, from requirements analysis through deployment, with hands-on experience in <span class="highlight">DevOps practices</span>, containerization, and CI/CD automation.</p>
-                    
-                    <p>I have a strong foundation in data structures, algorithms, machine learning, and cryptography. I'm passionate about translating complex technical concepts into actionable solutions while maintaining security compliance and system reliability.</p>
-                    
-                    <p>When I'm not coding, you'll find me exploring new technologies, mentoring junior developers, or contributing to open-source projects.</p>
-                </div>
-            </section>
-
-            <section id="experience" class="section">
-                <h3 class="section-heading-mobile">Experience</h3>
-                
-                <a href="#" class="experience-card">
-                    <div class="experience-date">May 2024 — Present</div>
-                    <div class="experience-content">
-                        <h4 class="experience-title">
-                            Software Developer Intern
-                            <span class="experience-company">Department of Sport, Arts and Culture</span>
-                            <i class="fas fa-arrow-right experience-arrow"></i>
-                        </h4>
-                        <p class="experience-description">Developed and maintained web applications using Django, HTML, CSS, and JavaScript. Designed database schemas in Microsoft SQL Server and PostgreSQL, optimizing queries for reporting. Implemented security measures including CSRF protection and secure coding practices. Deployed applications on Linux servers with Nginx.</p>
-                        <ul class="experience-tags">
-                            <li>Python</li>
-                            <li>Django</li>
-                            <li>PostgreSQL</li>
-                            <li>SQL Server</li>
-                            <li>Linux</li>
-                            <li>Nginx</li>
-                        </ul>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="section-header">
+                <span class="section-number">05.</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-list">
+                <article class="education-card">
+                    <div class="education-year">Expected 2027</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Master of Science in Computer Science</h3>
+                        <p class="education-focus">Machine Learning & Data Analytics</p>
+                        <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
+                        <span class="education-badge">In Progress</span>
                     </div>
-                </a>
-
-                <a href="#" class="experience-card">
-                    <div class="experience-date">Mar 2023 — Dec 2023</div>
-                    <div class="experience-content">
-                        <h4 class="experience-title">
-                            Computer Science Tutor & Teaching Assistant
-                            <span class="experience-company">University of Fort Hare</span>
-                            <i class="fas fa-arrow-right experience-arrow"></i>
-                        </h4>
-                        <p class="experience-description">Conducted hands-on lab sessions covering algorithm design, complexity analysis, software testing, and version control systems. Designed supplementary learning materials and coding exercises. Delivered technical training workshops with 90% satisfaction ratings.</p>
-                        <ul class="experience-tags">
-                            <li>Algorithm Design</li>
-                            <li>Software Testing</li>
-                            <li>Git</li>
-                            <li>Technical Training</li>
-                            <li>Mentoring</li>
-                        </ul>
+                </article>
+                <article class="education-card">
+                    <div class="education-year">December 2023</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Bachelor of Science (Honours) in Computer Science</h3>
+                        <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
                     </div>
-                </a>
-
-                <a href="resume/Anam_Myolwa_CV_2025.pdf" download class="resume-link">
-                    View Full Resume <i class="fas fa-arrow-right"></i>
-                </a>
-            </section>
-
-            <section id="projects" class="section">
-                <h3 class="section-heading-mobile">Projects</h3>
-
-                <a href="https://thebigwalk.dsac.gov.za" target="_blank" rel="noopener noreferrer" class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-running"></i>
-                        </div>
+                </article>
+                <article class="education-card">
+                    <div class="education-year">December 2022</div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Bachelor of Science in Computer Science</h3>
+                        <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
                     </div>
-                    <div class="project-content">
-                        <h4 class="project-title">
-                            Big Walk Registration System
-                            <i class="fas fa-arrow-up-right-from-square project-arrow"></i>
-                        </h4>
-                        <p class="project-description">Built a scalable Django web platform streamlining registration for The Big Walk event. Enhanced functionality with secure APIs and data encryption, deployed using Gunicorn and Nginx for thousands of users.</p>
-                        <ul class="project-tags">
-                            <li>Python</li>
-                            <li>Django</li>
-                            <li>MySQL</li>
-                            <li>REST APIs</li>
-                            <li>Nginx</li>
-                        </ul>
-                    </div>
-                </a>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4 class="project-title">
-                            ICT Services System
-                            <span class="project-badge">Internal</span>
-                        </h4>
-                        <p class="project-description">Developed a secure Django-based ICT services platform enabling DSAC users to request accounts and devices. Integrated APIs and automated email notifications with PDF attachments, deployed on Linux with Gunicorn and Nginx.</p>
-                        <ul class="project-tags">
-                            <li>Python</li>
-                            <li>Django</li>
-                            <li>MySQL</li>
-                            <li>REST APIs</li>
-                            <li>Gunicorn</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4 class="project-title">Distributed E-Commerce Platform</h4>
-                        <p class="project-description">Developed a scalable e-commerce application using Django REST Framework and React with microservices architecture. Deployed containerized services using Docker and Kubernetes on Azure Cloud, handling 1,000+ concurrent users.</p>
-                        <ul class="project-tags">
-                            <li>Django</li>
-                            <li>React</li>
-                            <li>PostgreSQL</li>
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                            <li>Azure</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4 class="project-title">Real-Time Data Analytics Dashboard</h4>
-                        <p class="project-description">Built an ETL pipeline using Python and Apache Airflow to extract, transform, and load data from multiple government databases. Created interactive Power BI dashboards serving 200+ government stakeholders.</p>
-                        <ul class="project-tags">
-                            <li>Python</li>
-                            <li>Apache Airflow</li>
-                            <li>SQL Server</li>
-                            <li>Power BI</li>
-                            <li>DAX</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4 class="project-title">Secure Student Management System</h4>
-                        <p class="project-description">Developed a comprehensive student information system using Java Spring Boot and Angular with RBAC. Integrated LDAP authentication and AES-256 encryption ensuring GDPR and POPIA compliance.</p>
-                        <ul class="project-tags">
-                            <li>Java</li>
-                            <li>Spring Boot</li>
-                            <li>Angular</li>
-                            <li>MySQL</li>
-                            <li>LDAP</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills" class="section">
-                <h3 class="section-heading-mobile">Skills</h3>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4 class="skill-category-title"><i class="fas fa-code"></i> Languages</h4>
-                        <ul class="skill-list">
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>JavaScript/TypeScript</li>
-                            <li>SQL</li>
-                            <li>C/C++</li>
-                            <li>Bash/Shell</li>
-                            <li>PowerShell</li>
-                            <li>R</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 class="skill-category-title"><i class="fas fa-globe"></i> Frameworks</h4>
-                        <ul class="skill-list">
-                            <li>Django</li>
-                            <li>Flask</li>
-                            <li>FastAPI</li>
-                            <li>Spring Boot</li>
-                            <li>React.js</li>
-                            <li>Angular</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 class="skill-category-title"><i class="fas fa-database"></i> Databases</h4>
-                        <ul class="skill-list">
-                            <li>PostgreSQL</li>
-                            <li>MySQL</li>
-                            <li>SQL Server</li>
-                            <li>Oracle</li>
-                            <li>MongoDB</li>
-                            <li>Redis</li>
-                            <li>SQLite</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 class="skill-category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h4>
-                        <ul class="skill-list">
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                            <li>Jenkins</li>
-                            <li>GitHub Actions</li>
-                            <li>Azure</li>
-                            <li>Terraform</li>
-                            <li>Nginx</li>
-                            <li>Linux</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 class="skill-category-title"><i class="fas fa-brain"></i> Data Science & ML</h4>
-                        <ul class="skill-list">
-                            <li>pandas</li>
-                            <li>NumPy</li>
-                            <li>scikit-learn</li>
-                            <li>TensorFlow</li>
-                            <li>PyTorch</li>
-                            <li>Apache Spark</li>
-                            <li>Power BI</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="education" class="section">
-                <h3 class="section-heading-mobile">Education</h3>
-                
-                <div class="education-list">
-                    <div class="education-item">
-                        <div class="education-year">2024 — 2027</div>
-                        <div class="education-content">
-                            <h4 class="education-degree">M.Sc. in Computer Science</h4>
-                            <p class="education-school">University of Fort Hare</p>
-                            <p class="education-focus">Machine Learning & Data Analytics</p>
-                            <span class="education-badge">In Progress</span>
-                        </div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-year">2023</div>
-                        <div class="education-content">
-                            <h4 class="education-degree">B.Sc. Honours in Computer Science</h4>
-                            <p class="education-school">University of Fort Hare</p>
-                        </div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-year">2022</div>
-                        <div class="education-content">
-                            <h4 class="education-degree">B.Sc. in Computer Science</h4>
-                            <p class="education-school">University of Fort Hare</p>
-                        </div>
-                    </div>
-                </div>
-
+                </article>
+            </div>
+            <div class="certifications">
                 <h4 class="certifications-title">Certifications</h4>
                 <div class="certifications-grid">
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fab fa-google"></i>
                         <span>Google Business Intelligence</span>
+                        <small>Google, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fas fa-shield-alt"></i>
                         <span>CompTIA Security+</span>
+                        <small>Alison, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fas fa-laptop"></i>
                         <span>CompTIA A+</span>
+                        <small>Alison, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fab fa-microsoft"></i>
-                        <span>Azure Administrator</span>
+                        <span>Microsoft Azure Administrator</span>
+                        <small>Alison, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fab fa-google"></i>
                         <span>Google IT Support</span>
+                        <small>Google, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fas fa-network-wired"></i>
                         <span>Advanced Network Security</span>
+                        <small>LearnQuest, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fab fa-linux"></i>
                         <span>Complete Linux Training</span>
+                        <small>Packt, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fas fa-cogs"></i>
-                        <span>ITIL Foundation</span>
+                        <span>ITIL</span>
+                        <small>Alison, 2025</small>
                     </div>
-                    <div class="cert-item">
+                    <div class="certification-item">
                         <i class="fas fa-user-secret"></i>
-                        <span>Intro to Cybersecurity (Cisco)</span>
+                        <span>Introduction to Cybersecurity</span>
+                        <small>CISCO, 2023</small>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <footer class="footer">
-                <p>Coded in <span class="highlight">VS Code</span>. Built with HTML, CSS & JavaScript. Deployed on <span class="highlight">Vercel</span>.</p>
-                <p class="copyright">&copy; 2025 Anam Myolwa. All rights reserved.</p>
-            </footer>
-        </main>
-    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-header centered">
+                <span class="section-number">06.</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <p class="contact-description">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            <div class="contact-info">
+                <a href="mailto:anammyolwa@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>anammyolwa@gmail.com</span>
+                </a>
+                <a href="tel:+27640434984" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+27 64 043 4984</span>
+                </a>
+                <a href="https://www.linkedin.com/in/anam-myolwa" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/myolwaanam" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <a href="mailto:anammyolwa@gmail.com" class="btn btn-primary btn-large">Say Hello</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed & Built by Anam Myolwa</p>
+            <div class="footer-social">
+                <a href="https://github.com/myolwaanam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/anam-myolwa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:anammyolwa@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
