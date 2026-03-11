@@ -2,7 +2,8 @@
 class ThemeManager {
     constructor() {
         this.themeToggle = document.getElementById('theme-toggle');
-        this.htmlElement = document.documentElement;
+        this.sunIcon = document.querySelector('.sun');
+        this.moonIcon = document.querySelector('.moon');
         this.body = document.body;
         this.init();
     }
@@ -28,9 +29,17 @@ class ThemeManager {
         if (theme === 'light') {
             this.body.classList.remove('dark-theme');
             this.body.classList.add('light-theme');
+            if (this.sunIcon && this.moonIcon) {
+                this.sunIcon.classList.add('hidden');
+                this.moonIcon.classList.remove('hidden');
+            }
         } else {
             this.body.classList.remove('light-theme');
             this.body.classList.add('dark-theme');
+            if (this.sunIcon && this.moonIcon) {
+                this.sunIcon.classList.remove('hidden');
+                this.moonIcon.classList.add('hidden');
+            }
         }
         localStorage.setItem('theme', theme);
     }
