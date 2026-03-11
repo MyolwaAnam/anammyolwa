@@ -10,7 +10,7 @@ class ThemeManager {
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme') || 'dark';
         this.setTheme(savedTheme);
-
+        
         // Listen to toggle button
         if (this.themeToggle) {
             this.themeToggle.addEventListener('click', () => this.toggleTheme());
@@ -62,7 +62,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const targetId = link.getAttribute('href');
         if (targetId === '#') return;
-
+        
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             e.preventDefault();
@@ -80,13 +80,13 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-
+    
     if (currentScroll > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
-
+    
     lastScroll = currentScroll;
 });
 
@@ -105,7 +105,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.section, .experience-card, .skill-category, .education-card, .certification-item').forEach(el => {
+document.querySelectorAll('.section, .experience-card, .project-card, .skill-category, .education-card, .certification-item').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
@@ -116,16 +116,16 @@ const navItems = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
-
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-
+        
         if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-
+    
     navItems.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -145,12 +145,3 @@ document.addEventListener('keydown', (e) => {
 
 // ===== INITIALIZE THEME MANAGER =====
 new ThemeManager();
-
-// ===== SPOTLIGHT EFFECT =====
-const spotlight = document.getElementById('spotlight');
-if (spotlight) {
-    document.addEventListener('mousemove', (e) => {
-        spotlight.style.left = e.clientX + 'px';
-        spotlight.style.top = e.clientY + 'px';
-    });
-}
