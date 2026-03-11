@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anam Myolwa - Ultra-Premium Software Developer Portfolio">
-    <meta name="theme-color" content="#0a0e27">
-    <title>Anam Myolwa | Ultra-Premium Full-Stack Developer</title>
-    
-    <!-- Preload fonts for better performance -->
+    <title>Anam Myolwa - Software Developer</title>
+    <link rel="icon" href="images/images.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@400;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/images.png" type="image/png">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Particle System -->
+<body class="dark-theme">
+    <!-- Particles -->
     <div class="particles" id="particles"></div>
-    
-    <!-- Spotlight Effect -->
-    <div class="spotlight" id="spotlight"></div>
 
-    <!-- Header & Navigation -->
+    <!-- Spotlight Effect -->
+    <div id="spotlight" class="spotlight"></div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <div class="theme-icon sun-icon">
+            <i class="fas fa-sun"></i>
+        </div>
+        <div class="theme-icon moon-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </button>
+
+    <!-- Navigation -->
     <header class="header">
         <nav class="nav">
             <a href="#" class="logo">✦ AM</a>
@@ -63,24 +63,19 @@
         <section id="hero" class="hero">
             <div class="hero-content">
                 <div class="hero-image-wrapper">
-                    <div class="hero-image-orbit"></div>
                     <img src="images/Myolwa.jpg" alt="Anam Myolwa" class="hero-image">
                 </div>
                 <h1 class="hero-title">Anam Myolwa</h1>
-                <h2 class="hero-subtitle">Full-Stack Software Architect</h2>
-                <p class="hero-description">
-                    Crafting cutting-edge, scalable enterprise solutions with modern frameworks, 
-                    cloud infrastructure, and obsessive attention to detail. Specializing in 
-                    distributed systems, cybersecurity, and high-performance applications.
-                </p>
+                <h2 class="hero-subtitle">Software Developer & MSc Candidate</h2>
+                <p class="hero-description">I build secure, scalable enterprise applications with modern frameworks and cloud infrastructure.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Start a Project
+                        <i class="fas fa-paper-plane"></i>
+                        Get in Touch
                     </a>
                     <a href="resume/Anam_Myolwa_CV_2025.pdf" download class="btn btn-secondary">
                         <i class="fas fa-download"></i>
-                        Download CV
+                        Resume
                     </a>
                 </div>
                 <div class="hero-social">
@@ -100,34 +95,21 @@
         <!-- About Section -->
         <section id="about" class="section">
             <div class="section-header">
-                <span class="section-number">01</span>
+                <span class="section-number">01.</span>
                 <h2 class="section-title">About Me</h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-content">
-                <p>
-                    Award-winning <span class="highlight">Software Developer</span> and <span class="highlight">MSc Computer Science</span> candidate 
-                    specializing in <span class="highlight">Digital Forensics</span>, <span class="highlight">Cybersecurity</span>, and 
-                    <span class="highlight">Enterprise Architecture</span>. I architect and deploy secure, scalable systems handling millions of transactions 
-                    using cutting-edge frameworks and cloud-native technologies.
-                </p>
-                <p>
-                    Proven expertise across the complete Software Development Lifecycle with deep knowledge of microservices, 
-                    containerization, CI/CD automation, and DevOps best practices. Strong foundation in algorithms, data structures, 
-                    machine learning, cryptography, and distributed systems design patterns.
-                </p>
-                <p>
-                    Known for translating complex technical concepts into elegant, maintainable solutions while maintaining 
-                    enterprise-grade security and reliability. Effective technical leader mentoring junior developers and contributing 
-                    to open-source projects.
-                </p>
+                <p>Versatile Software Developer and MSc Computer Science candidate specializing in <span class="highlight">Digital Forensics</span>, <span class="highlight">Cybersecurity</span>, and <span class="highlight">Full-Stack Development</span>. Demonstrated expertise in building secure, scalable enterprise applications using modern frameworks and cloud infrastructure.</p>
+                <p>Proficient in the complete SDLC from requirements analysis through deployment, with hands-on experience in DevOps practices, containerization, and CI/CD automation. Strong foundation in data structures, algorithms, machine learning, and cryptography.</p>
+                <p>Proven ability to translate complex technical concepts into actionable solutions while maintaining security compliance and system reliability. Effective communicator and collaborative team player with leadership experience in mentoring junior developers and students.</p>
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="section">
             <div class="section-header">
-                <span class="section-number">02</span>
+                <span class="section-number">02.</span>
                 <h2 class="section-title">Experience</h2>
                 <div class="section-line"></div>
             </div>
@@ -135,47 +117,40 @@
                 <article class="experience-card">
                     <div class="experience-date">May 2024 - Present</div>
                     <div class="experience-content">
-                        <h3 class="experience-title">
-                            Software Developer Intern 
-                            <span class="experience-company">@ Department of Sport, Arts and Culture</span>
-                        </h3>
-                        <p class="experience-location">📍 Pretoria, Gauteng</p>
+                        <h3 class="experience-title">Software Developer Intern <span class="experience-company">@ Department of Sport, Arts and Culture</span></h3>
+                        <p class="experience-location">Pretoria, Gauteng</p>
                         <ul class="experience-duties">
-                            <li>Engineered full-stack web applications using Django, React, PostgreSQL, serving 500+ concurrent users</li>
-                            <li>Designed optimized database schemas with complex queries reducing API response times by 65%</li>
-                            <li>Implemented industry-standard security: JWT authentication, input sanitization, CSRF protection, AES-256 encryption</li>
-                            <li>Deployed applications on Linux/Nginx with Docker containerization and automated deployment pipelines</li>
-                            <li>Delivered features within Agile sprints, collaborating with 5+ stakeholders on requirements</li>
+                            <li>Developed and maintained web applications using Django, HTML, CSS, and JavaScript to support programme management and event coordination</li>
+                            <li>Designed database schemas in Microsoft SQL Server and PostgreSQL, optimizing queries for reporting and data retrieval</li>
+                            <li>Built backend features including user authentication, session management, and form validation to improve data accuracy</li>
+                            <li>Implemented security measures such as input sanitization, CSRF protection, and secure coding practices across production systems</li>
+                            <li>Deployed applications on Linux servers, configuring Nginx, managing static files, and setting up production environments</li>
+                            <li>Collaborated with stakeholders to gather requirements and deliver features within Agile sprint cycles</li>
                         </ul>
                         <div class="experience-tags">
                             <span class="tag">Django</span>
-                            <span class="tag">React</span>
+                            <span class="tag">SQL Server</span>
                             <span class="tag">PostgreSQL</span>
-                            <span class="tag">Docker</span>
                             <span class="tag">Linux</span>
                             <span class="tag">Nginx</span>
                         </div>
                     </div>
                 </article>
-
                 <article class="experience-card">
                     <div class="experience-date">Mar 2023 - Dec 2023</div>
                     <div class="experience-content">
-                        <h3 class="experience-title">
-                            Computer Science Tutor & TA
-                            <span class="experience-company">@ University of Fort Hare</span>
-                        </h3>
-                        <p class="experience-location">📍 Alice, Eastern Cape</p>
+                        <h3 class="experience-title">Computer Science Tutor & Teaching Assistant <span class="experience-company">@ University of Fort Hare</span></h3>
+                        <p class="experience-location">Alice, Eastern Cape</p>
                         <ul class="experience-duties">
-                            <li>Conducted 40+ lab sessions covering algorithms, data structures, testing, and version control systems</li>
-                            <li>Created comprehensive learning materials achieving 92% student satisfaction rating</li>
-                            <li>Delivered technical workshops on LaTeX, Microsoft Office Suite, and academic research methodologies</li>
+                            <li>Conducted hands-on lab sessions covering algorithm design, complexity analysis, software testing, debugging techniques, and version control systems</li>
+                            <li>Designed supplementary learning materials, coding exercises, and assessment rubrics aligned with curriculum objectives</li>
+                            <li>Delivered technical training workshops on Microsoft Office Suite, LaTeX document preparation, and academic research methodologies, achieving 90% satisfaction ratings</li>
                         </ul>
                         <div class="experience-tags">
                             <span class="tag">Teaching</span>
-                            <span class="tag">Python</span>
+                            <span class="tag">Algorithms</span>
                             <span class="tag">Mentoring</span>
-                            <span class="tag">Git</span>
+                            <span class="tag">Version Control</span>
                         </div>
                     </div>
                 </article>
@@ -185,80 +160,61 @@
         <!-- Projects Section -->
         <section id="projects" class="section">
             <div class="section-header">
-                <span class="section-number">03</span>
-                <h2 class="section-title">Flagship Projects</h2>
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Projects</h2>
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
-                <article class="project-card">
+                <article class="project-card featured">
                     <div class="project-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <h3 class="project-title">Distributed E-Commerce Platform</h3>
-                    <p class="project-description">
-                        Built a production-grade e-commerce platform serving 10,000+ users with Django REST Framework, React, 
-                        PostgreSQL, Redis, and Stripe integration. Implemented microservices architecture with Docker Compose, 
-                        Kubernetes orchestration, and Azure cloud deployment.
-                    </p>
+                    <p class="project-description">Developed a scalable e-commerce application using Django REST Framework backend and React frontend, implementing microservices for user authentication, product catalog, shopping cart, and payment processing (Stripe API integration).</p>
                     <ul class="project-features">
-                        <li>Handles 5,000+ concurrent users with 99.95% uptime SLA</li>
-                        <li>Optimized checkout flow reducing cart abandonment by 40%</li>
-                        <li>Real-time inventory management with Redis caching</li>
-                        <li>CI/CD pipeline with GitLab resulting in 10 deployments/day</li>
+                        <li>Deployed containerized services using Docker Compose and Kubernetes on Azure Cloud</li>
+                        <li>Implemented Redis caching for session management and RabbitMQ message queuing</li>
+                        <li>Handling 1,000+ concurrent users with 99.9% uptime</li>
                     </ul>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Django</span>
                         <span class="tag">React</span>
                         <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
                         <span class="tag">Docker</span>
                         <span class="tag">Kubernetes</span>
                         <span class="tag">Azure</span>
-                        <span class="tag">Redis</span>
                     </div>
                 </article>
-
-                <article class="project-card">
+                <article class="project-card featured">
                     <div class="project-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="project-title">Real-Time Analytics Dashboard</h3>
-                    <p class="project-description">
-                        Engineered enterprise ETL pipeline processing 100M+ records/day from SQL Server, Oracle, and PostgreSQL 
-                        using Python, Apache Airflow, and PySpark. Created interactive Power BI dashboards with custom DAX measures 
-                        for government stakeholders.
-                    </p>
+                    <h3 class="project-title">Real-Time Data Analytics Dashboard</h3>
+                    <p class="project-description">Built an ETL pipeline using Python (pandas, Apache Airflow) to extract, transform, and load data from multiple government databases (SQL Server, Oracle) into a centralized data warehouse for business intelligence reporting.</p>
                     <ul class="project-features">
-                        <li>Automated data pipelines reducing manual reporting by 95%</li>
-                        <li>Interactive dashboards serving 500+ government officials daily</li>
-                        <li>Advanced analytics uncovering $2M+ in cost savings</li>
-                        <li>99.9% data accuracy with automated validation workflows</li>
+                        <li>Created interactive Power BI dashboards with custom DAX measures for executive-level reporting</li>
+                        <li>Serving 200+ government stakeholders with program performance and budget allocation metrics</li>
                     </ul>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Apache Airflow</span>
-                        <span class="tag">PySpark</span>
                         <span class="tag">SQL Server</span>
+                        <span class="tag">Oracle Database</span>
                         <span class="tag">Power BI</span>
                         <span class="tag">DAX</span>
                     </div>
                 </article>
-
-                <article class="project-card">
+                <article class="project-card featured">
                     <div class="project-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-user-shield"></i>
                     </div>
                     <h3 class="project-title">Secure Student Management System</h3>
-                    <p class="project-description">
-                        Architected enterprise student information system using Java Spring Boot, Angular, and MySQL with 
-                        role-based access control, LDAP integration, and AES-256 encryption. Deployed on Tomcat with SSL/TLS, 
-                        GDPR and POPIA compliance.
-                    </p>
+                    <p class="project-description">Developed a comprehensive student information system using Java Spring Boot and Angular, implementing RBAC for administrators, faculty, and students with granular permission management and audit logging.</p>
                     <ul class="project-features">
-                        <li>Manages 50,000+ student records with granular permission system</li>
-                        <li>Automated audit logging for compliance requirements</li>
-                        <li>99.99% availability with failover redundancy</li>
-                        <li>Multi-tenant architecture supporting 15+ institutions</li>
+                        <li>Integrated LDAP authentication and implemented AES-256 encryption for sensitive data at rest</li>
+                        <li>Deployed on Tomcat with SSL/TLS certificates ensuring GDPR and POPIA compliance</li>
                     </ul>
                     <div class="project-tags">
                         <span class="tag">Java</span>
@@ -267,6 +223,7 @@
                         <span class="tag">MySQL</span>
                         <span class="tag">LDAP</span>
                         <span class="tag">Tomcat</span>
+                        <span class="tag">Hibernate</span>
                     </div>
                 </article>
             </div>
@@ -275,8 +232,8 @@
         <!-- Skills Section -->
         <section id="skills" class="section">
             <div class="section-header">
-                <span class="section-number">04</span>
-                <h2 class="section-title">Technical Arsenal</h2>
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Skills</h2>
                 <div class="section-line"></div>
             </div>
             <div class="skills-grid">
@@ -285,15 +242,14 @@
                     <div class="skill-items">
                         <span class="skill-item">Python</span>
                         <span class="skill-item">Java</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">JavaScript/TypeScript</span>
                         <span class="skill-item">SQL</span>
                         <span class="skill-item">C/C++</span>
-                        <span class="skill-item">Bash</span>
+                        <span class="skill-item">Bash/Shell</span>
                         <span class="skill-item">PowerShell</span>
+                        <span class="skill-item">R</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h4 class="skill-category-title"><i class="fas fa-globe"></i> Web Frameworks</h4>
                     <div class="skill-items">
@@ -304,23 +260,23 @@
                         <span class="skill-item">React.js</span>
                         <span class="skill-item">Angular</span>
                         <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Express</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Tailwind CSS</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h4 class="skill-category-title"><i class="fas fa-database"></i> Databases</h4>
                     <div class="skill-items">
                         <span class="skill-item">PostgreSQL</span>
                         <span class="skill-item">MySQL</span>
                         <span class="skill-item">SQL Server</span>
-                        <span class="skill-item">Oracle</span>
+                        <span class="skill-item">Oracle Database</span>
                         <span class="skill-item">MongoDB</span>
                         <span class="skill-item">Redis</span>
-                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">SQLite</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h4 class="skill-category-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h4>
                     <div class="skill-items">
@@ -330,13 +286,14 @@
                         <span class="skill-item">GitLab CI/CD</span>
                         <span class="skill-item">GitHub Actions</span>
                         <span class="skill-item">Azure</span>
-                        <span class="skill-item">AWS</span>
                         <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Nginx</span>
+                        <span class="skill-item">Apache</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
-                    <h4 class="skill-category-title"><i class="fas fa-brain"></i> Data & ML</h4>
+                    <h4 class="skill-category-title"><i class="fas fa-brain"></i> Data Science & ML</h4>
                     <div class="skill-items">
                         <span class="skill-item">pandas</span>
                         <span class="skill-item">NumPy</span>
@@ -344,37 +301,38 @@
                         <span class="skill-item">TensorFlow</span>
                         <span class="skill-item">Keras</span>
                         <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Jupyter</span>
                         <span class="skill-item">Apache Spark</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
-                    <h4 class="skill-category-title"><i class="fas fa-tools"></i> Tools & IDEs</h4>
+                    <h4 class="skill-category-title"><i class="fas fa-laptop-code"></i> IDEs & Editors</h4>
                     <div class="skill-items">
                         <span class="skill-item">VS Code</span>
                         <span class="skill-item">IntelliJ IDEA</span>
                         <span class="skill-item">PyCharm</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">Jira</span>
-                        <span class="skill-item">Postman</span>
+                        <span class="skill-item">Eclipse</span>
+                        <span class="skill-item">Visual Studio</span>
                         <span class="skill-item">Vim</span>
+                        <span class="skill-item">Sublime Text</span>
                     </div>
                 </div>
             </div>
-
             <div class="competencies">
-                <h4 class="competencies-title">🏆 Core Competencies</h4>
+                <h4 class="competencies-title">Core Competencies</h4>
                 <div class="competencies-grid">
-                    <span class="competency">Enterprise Architecture</span>
-                    <span class="competency">Microservices Design</span>
-                    <span class="competency">Cloud Infrastructure</span>
-                    <span class="competency">Distributed Systems</span>
-                    <span class="competency">Cybersecurity</span>
-                    <span class="competency">DevOps Engineering</span>
-                    <span class="competency">Full-Stack Development</span>
-                    <span class="competency">API Design</span>
-                    <span class="competency">Database Optimization</span>
-                    <span class="competency">Technical Leadership</span>
+                    <span class="competency">Full-Stack Web Development</span>
+                    <span class="competency">API Design & Microservices Architecture</span>
+                    <span class="competency">Cloud Computing & Infrastructure (Azure)</span>
+                    <span class="competency">Database Design & Optimization</span>
+                    <span class="competency">DevOps & CI/CD Pipeline Management</span>
+                    <span class="competency">Container Orchestration (Docker, Kubernetes)</span>
+                    <span class="competency">Machine Learning & Data Analytics</span>
+                    <span class="competency">Agile/Scrum Methodologies</span>
+                    <span class="competency">Technical Documentation & Communication</span>
+                    <span class="competency">Team Leadership & Mentoring</span>
                 </div>
             </div>
         </section>
@@ -382,86 +340,82 @@
         <!-- Education Section -->
         <section id="education" class="section">
             <div class="section-header">
-                <span class="section-number">05</span>
-                <h2 class="section-title">Education & Credentials</h2>
+                <span class="section-number">05.</span>
+                <h2 class="section-title">Education</h2>
                 <div class="section-line"></div>
             </div>
-
             <div class="education-list">
                 <article class="education-card">
                     <div class="education-year">Expected 2027</div>
                     <div class="education-content">
-                        <h3 class="education-degree">MSc Computer Science</h3>
-                        <p class="education-focus">Specialization: Machine Learning & Data Analytics</p>
+                        <h3 class="education-degree">Master of Science in Computer Science</h3>
+                        <p class="education-focus">Machine Learning & Data Analytics</p>
                         <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
                         <span class="education-badge">In Progress</span>
                     </div>
                 </article>
-
                 <article class="education-card">
                     <div class="education-year">December 2023</div>
                     <div class="education-content">
-                        <h3 class="education-degree">BSc (Honours) Computer Science</h3>
-                        <p class="education-school">University of Fort Hare</p>
+                        <h3 class="education-degree">Bachelor of Science (Honours) in Computer Science</h3>
+                        <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
                     </div>
                 </article>
-
                 <article class="education-card">
                     <div class="education-year">December 2022</div>
                     <div class="education-content">
-                        <h3 class="education-degree">BSc Computer Science</h3>
-                        <p class="education-school">University of Fort Hare</p>
+                        <h3 class="education-degree">Bachelor of Science in Computer Science</h3>
+                        <p class="education-school">University of Fort Hare, Alice, Eastern Cape</p>
                     </div>
                 </article>
             </div>
-
             <div class="certifications">
-                <h4 class="certifications-title">🎓 Professional Certifications</h4>
+                <h4 class="certifications-title">Certifications</h4>
                 <div class="certifications-grid">
                     <div class="certification-item">
                         <i class="fab fa-google"></i>
                         <span>Google Business Intelligence</span>
-                        <small>2025</small>
+                        <small>Google, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fas fa-shield-alt"></i>
                         <span>CompTIA Security+</span>
-                        <small>2025</small>
+                        <small>Alison, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fas fa-laptop"></i>
                         <span>CompTIA A+</span>
-                        <small>2025</small>
+                        <small>Alison, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fab fa-microsoft"></i>
-                        <span>Azure Administrator</span>
-                        <small>2025</small>
+                        <span>Microsoft Azure Administrator</span>
+                        <small>Alison, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fab fa-google"></i>
                         <span>Google IT Support</span>
-                        <small>2025</small>
+                        <small>Google, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fas fa-network-wired"></i>
                         <span>Advanced Network Security</span>
-                        <small>2025</small>
+                        <small>LearnQuest, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fab fa-linux"></i>
                         <span>Complete Linux Training</span>
-                        <small>2025</small>
+                        <small>Packt, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fas fa-cogs"></i>
-                        <span>ITIL Foundation</span>
-                        <small>2025</small>
+                        <span>ITIL</span>
+                        <small>Alison, 2025</small>
                     </div>
                     <div class="certification-item">
                         <i class="fas fa-user-secret"></i>
-                        <span>Cybersecurity Essentials</span>
-                        <small>2023</small>
+                        <span>Introduction to Cybersecurity</span>
+                        <small>CISCO, 2023</small>
                     </div>
                 </div>
             </div>
@@ -470,13 +424,10 @@
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="section-header centered">
-                <span class="section-number">06</span>
-                <h2 class="section-title">Let's Create Magic Together</h2>
+                <span class="section-number">06.</span>
+                <h2 class="section-title">Get In Touch</h2>
             </div>
-            <p class="contact-description">
-                I'm actively seeking opportunities to architect innovative solutions. Whether you have a groundbreaking project, 
-                technical questions, or just want to connect – let's have a conversation!
-            </p>
+            <p class="contact-description">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <div class="contact-info">
                 <a href="mailto:anammyolwa@gmail.com" class="contact-item">
                     <i class="fas fa-envelope"></i>
@@ -495,17 +446,14 @@
                     <span>GitHub</span>
                 </a>
             </div>
-            <a href="mailto:anammyolwa@gmail.com" class="btn btn-secondary btn-large">
-                <i class="fas fa-rocket"></i>
-                Let's Talk
-            </a>
+            <a href="mailto:anammyolwa@gmail.com" class="btn btn-primary btn-large">Say Hello</a>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>Architected with precision by Anam Myolwa © 2026</p>
+            <p>Designed & Built by Anam Myolwa</p>
             <div class="footer-social">
                 <a href="https://github.com/myolwaanam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/anam-myolwa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
