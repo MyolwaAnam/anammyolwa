@@ -1,4 +1,4 @@
-// ===== Spotlight Effect =====
+// ===== Spotlight Effect with Smooth Following =====
 document.addEventListener('mousemove', (e) => {
     const spotlight = document.getElementById('spotlight');
     if (spotlight) {
@@ -54,9 +54,9 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 50) {
-        header.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
+        header.classList.add('scrolled');
     } else {
-        header.style.boxShadow = 'none';
+        header.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;
@@ -65,20 +65,25 @@ window.addEventListener('scroll', () => {
 // ===== Fade In Animation on Scroll =====
 const observerOptions = {
     root: null,
-    rootMargin: '0px',
+    rootMargin: '0px 0px -50px 0px',
     threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 100);
         }
     });
 }, observerOptions);
 
-// Add fade-in class to sections and observe them
-document.querySelectorAll('.section, .experience-card, .project-card, .skill-category, .education-card, .certification-item').forEach(el => {
+// Add fade-in class to elements and observe them
+const elementsToObserve = document.querySelectorAll(
+    '.section, .experience-card, .project-card, .skill-category, .education-card, .certification-item, .competencies'
+);
+elementsToObserve.forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
@@ -87,7 +92,7 @@ document.querySelectorAll('.section, .experience-card, .project-card, .skill-cat
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
+const updateActiveNavLink = () => {
     let current = '';
     
     sections.forEach(section => {
@@ -105,41 +110,38 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
+};
 
-// ===== Typing Effect for Hero Subtitle =====
+window.addEventListener('scroll', updateActiveNavLink);
+
+// ===== Enhanced Typing Effect for Hero Subtitle =====
 const heroSubtitle = document.querySelector('.hero-subtitle');
 if (heroSubtitle) {
     const text = heroSubtitle.textContent;
+    const originalText = text;
     heroSubtitle.textContent = '';
-    heroSubtitle.style.borderRight = '2px solid var(--accent)';
     
     let i = 0;
     const typeWriter = () => {
         if (i < text.length) {
             heroSubtitle.textContent += text.charAt(i);
             i++;
-            setTimeout(typeWriter, 50);
-        } else {
-            setTimeout(() => {
-                heroSubtitle.style.borderRight = 'none';
-            }, 1000);
+            setTimeout(typeWriter, 40 + Math.random() * 20);
         }
     };
     
-    // Start typing after a short delay
-    setTimeout(typeWriter, 500);
+    setTimeout(typeWriter, 800);
 }
 
-// ===== Skill Items Hover Effect =====
+// ===== Skill Items Hover Effect with Ripple =====
 const skillItems = document.querySelectorAll('.skill-item');
 skillItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'scale(1.05)';
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.08) translateY(-2px)';
     });
     
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'scale(1)';
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
     });
 });
 
@@ -152,7 +154,67 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// ===== Parallax Scroll Effect (Subtle) =====
+const parallaxElements = document.querySelectorAll('.section');
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            parallaxElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const scrollPercent = Math.abs(rect.top) / window.innerHeight;
+                
+                if (scrollPercent < 2) {
+                    el.style.opacity = Math.min(1, 1 - scrollPercent * 0.2);
+                }
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
 // ===== Prevent Flash of Unstyled Content =====
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
 });
+
+// ===== Add stagger animation delays =====
+const staggerElements = document.querySelectorAll('.experience-card, .project-card, .certification-item');
+staggerElements.forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.1}s`;
+});
+
+// ===== Counter Animation for Stats (if added) =====
+const countUp = (element, target, duration = 1500) => {
+    let current = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, 16);
+};
+
+// ===== Smooth Loading Animation =====
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+// ===== Better Performance with Debounced Events =====
+const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+};
+
+// Apply debounce to scroll heavy operations
+const debouncedScroll = debounce(updateActiveNavLink, 50);
+window.addEventListener('scroll', debouncedScroll);
